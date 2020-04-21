@@ -10,4 +10,5 @@ script:
   - cd ~
   - ls -a
   - cd -
-  - npm run deploy
+  - cat ~/.clasprc.json
+  - npm run login
