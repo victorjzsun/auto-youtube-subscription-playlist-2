@@ -5,6 +5,9 @@ node_js:
 before_script: npm install
 
 script:
-  - echo $CLASPRC_JSON > .clasprc.json
+  - echo $CLASPRC_JSON > ~/.clasprc.json
   - echo $CLASP_JSON > .clasp.json
+  - cd ~
+  - ls -a
+  - cd -
   - npm run deploy
