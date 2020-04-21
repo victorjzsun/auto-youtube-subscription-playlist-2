@@ -3,7 +3,11 @@ box: node
 build:
   steps:
     - npm-install
-
+    - script:
+        name: get node version
+        code: |
+          node -v
+          npm -v
     - script:
         name: init .clasprc.json .clasp.json
         code: |
