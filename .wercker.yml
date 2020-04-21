@@ -4,12 +4,6 @@ build:
   steps:
     - npm-install
     - script:
-        name: check pwd
-        code: |
-          cd ~
-          pwd
-          cd -
-    - script:
         name: init .clasprc.json .clasp.json
         code: |
           echo $CLASPRC_JSON > ~/.clasprc.json
