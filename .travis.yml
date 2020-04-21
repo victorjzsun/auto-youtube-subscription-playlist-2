@@ -3,6 +3,9 @@ node_js:
 - 13.13.0
 
 script:
+  - cd ~
+  - pwd
+  - cd -
   - echo $CLASPRC_JSON > ~/.clasprc.json
   - echo $CLASP_JSON > .clasp.json
   - npm run login

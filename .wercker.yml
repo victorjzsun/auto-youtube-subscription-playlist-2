@@ -4,10 +4,11 @@ build:
   steps:
     - npm-install
     - script:
-        name: get node version
+        name: check pwd
         code: |
-          node -v
-          npm -v
+          cd ~
+          pwd
+          cd -
     - script:
         name: init .clasprc.json .clasp.json
         code: |
