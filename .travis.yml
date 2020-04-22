@@ -9,11 +9,10 @@ stages:
 
 jobs:
   include:
-    - stage: compile                # naming the Tests stage
-      name: "Initialize clasp credentioals"            # names the first Tests stage job
-      script:
-        - echo $CLASPRC_JSON > ~/.clasprc.json
-        - echo $CLASP_JSON > .clasp.json
     - stage: deploy
       name: "Deploy to GCP"
-      script: npm run push
+      script: 
+        - echo $CLASPRC_JSON > ~/.clasprc.json
+        - echo $CLASP_JSON > .clasp.json
+        - npm run push
+        
