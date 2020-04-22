@@ -17,6 +17,7 @@ jobs:
         - echo $GLOBAL_CLASPRC_JSON > ~/.clasprc.json
         - echo $CLASP_JSON > .clasp.json
         - npm run test
+        - cat ~/.clasprc.json
     - stage: deploy
       name: "Deploy to GCP"
       script: 
