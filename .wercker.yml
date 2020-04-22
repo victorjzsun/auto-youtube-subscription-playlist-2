@@ -9,12 +9,6 @@ build:
           echo $CLASPRC_JSON > ~/.clasprc.json
           echo $CLASP_JSON > .clasp.json
     - script:
-        name: check file system
-        code: |
-          cd ~
-          ls -a
-          cd -
-    - script:
         name: push
         code: |
           npm run deploy

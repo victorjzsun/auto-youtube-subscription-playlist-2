@@ -7,8 +7,4 @@ before_script: npm install
 script:
   - echo $CLASPRC_JSON > ~/.clasprc.json
   - echo $CLASP_JSON > .clasp.json
-  - cd ~
-  - ls -a
-  - cd -
-  - cat ~/.clasprc.json
-  - npm run login
+  - npm run deploy
