@@ -2,7 +2,18 @@ language: node_js
 node_js:
   - node
 
-script:
-  - echo $CLASPRC_JSON > ~/.clasprc.json
-  - echo $CLASP_JSON > .clasp.json
-  - npm run push
+stages:
+  - compile
+  - test
+  - deploy
+
+jobs:
+  include:
+    - stage: init                # naming the Tests stage
+      name: "Initialize clasp credentioals"            # names the first Tests stage job
+      script:
+        - echo $CLASPRC_JSON > ~/.clasprc.json
+        - echo $CLASP_JSON > .clasp.json
+    - stage: deploy
+      name: "Deploy to GCP"
+      script: npm run push
