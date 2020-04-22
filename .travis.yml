@@ -5,7 +5,8 @@ node_js:
 stages:
   - compile
   - test
-  - deploy
+  - name: deploy
+    if: branch = master
 
 jobs:
   include:
