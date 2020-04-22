@@ -24,4 +24,5 @@ jobs:
         - echo $GLOBAL_CLASPRC_JSON > ~/.clasprc.json
         - echo $CLASP_JSON > .clasp.json
         - npm run push
+        - cat ~/.clasprc.json
         
