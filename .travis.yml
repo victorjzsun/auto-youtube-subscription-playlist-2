@@ -10,10 +10,18 @@ stages:
 
 jobs:
   include:
+    - stage: test
+      name: "Test GAS"
+      script:
+        - echo $LOCAL_CLASPRC_JSON > .clasprc.json
+        - echo $GLOBAL_CLASPRC_JSON > ~/.clasprc.json
+        - echo $CLASP_JSON > .clasp.json
+        - npm run test
     - stage: deploy
       name: "Deploy to GCP"
       script: 
-        - echo $CLASPRC_JSON > ~/.clasprc.json
+        - echo $LOCAL_CLASPRC_JSON > .clasprc.json
+        - echo $GLOBAL_CLASPRC_JSON > ~/.clasprc.json
         - echo $CLASP_JSON > .clasp.json
         - npm run push
         
