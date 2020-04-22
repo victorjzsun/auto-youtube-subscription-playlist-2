@@ -7,9 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "login": "clasp login",
-    "status": "clasp login --status",
-    "deploy": "clasp push",
+    "push": "clasp push",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
