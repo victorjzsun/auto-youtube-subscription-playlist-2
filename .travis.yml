@@ -18,7 +18,6 @@ jobs:
         - echo $TEST_CLASP_JSON > .clasp.json
         - npm run push
         - npm run test
-        - npm run echo
     - stage: deploy
       name: "Deploy to GCP"
       script: 
