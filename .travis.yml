@@ -13,17 +13,14 @@ jobs:
     - stage: test
       name: "Test GAS"
       script:
-        - echo $LOCAL_CLASPRC_JSON > .clasprc.json
-        - echo $GLOBAL_CLASPRC_JSON > ~/.clasprc.json
-        - echo $CLASP_JSON > .clasp.json
+        - echo $TEST_LOCAL_CLASPRC_JSON > .clasprc.json
+        - echo $TEST_GLOBAL_CLASPRC_JSON > ~/.clasprc.json
+        - echo $TEST_CLASP_JSON > .clasp.json
+        - npm run push
         - npm run test
-        - cat ~/.clasprc.json
     - stage: deploy
       name: "Deploy to GCP"
       script: 
-        - echo $LOCAL_CLASPRC_JSON > .clasprc.json
-        - echo $GLOBAL_CLASPRC_JSON > ~/.clasprc.json
-        - echo $CLASP_JSON > .clasp.json
+        - echo $PROD_GLOBAL_CLASPRC_JSON > ~/.clasprc.json
+        - echo $PROD_CLASP_JSON > .clasp.json
         - npm run push
-        - cat ~/.clasprc.json
-        
