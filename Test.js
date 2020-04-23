@@ -1,3 +1,3 @@
-function myFunction() {
-  return "All test passed";
+function Test() {
+  return "All tests passed";
 }

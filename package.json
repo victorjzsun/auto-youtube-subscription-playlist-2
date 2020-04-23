@@ -8,7 +8,7 @@
   },
   "scripts": {
     "push": "clasp push",
-    "test": "clasp run Test"
+    "test": "tmpfile=$(mktemp /tmp/XXXXXX) && clasp run Test | tee $tmpfile && grep 'All tests passed' $tmpfile &> /dev/null && if [ $? != 0 ]; then exit 1; fi"
   },
   "repository": {
     "type": "git",
