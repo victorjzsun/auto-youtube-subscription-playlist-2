@@ -6,7 +6,7 @@ stages:
   - compile
   - test
   - name: deploy
-    if: branch = master AND type = push AND fork = false
+    if: branch = master AND type = push
 
 jobs:
   include:
