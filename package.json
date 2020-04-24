@@ -8,7 +8,7 @@
   },
   "scripts": {
     "push": "clasp push",
-    "test": "if clasp run test | tee /dev/stderr | grep 'All tests passed'; then exit 0; else exit 1; fi"
+    "test": "if clasp run test | tee /dev/stderr | grep -q 'All tests passed'; then exit 0; else exit 1; fi"
   },
   "repository": {
     "type": "git",
